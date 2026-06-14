@@ -25,7 +25,25 @@ internal class Program
 
         #endregion
 
-    
+        #region Question02
+        //Q2: What is the difference between method overloading
+        //    and method overriding?
+
+
+        // Method Overloading:
+        // Same method name, but different parameters (number, type, or order).
+        // Occurs within the same class.
+        // Resolved at compile time (Static Binding).
+
+        // Method Overriding:
+        // A derived class provides a new implementation for a method inherited from a base class.
+        // Requires virtual in the base class and override in the derived class.
+        // Resolved at runtime (Dynamic Binding).
+
+
+        #endregion
+
+
 
         #endregion
 
