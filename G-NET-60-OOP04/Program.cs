@@ -19,8 +19,8 @@ internal class Program
 
 
 
-        Animal a = new Dog();
-        a.Sound();
+        //Animal a = new Dog();
+        //a.Sound();
 
 
         #endregion
@@ -53,28 +53,59 @@ internal class Program
         // Used in the derived class to provide a new implementation of a virtual method.
 
         #endregion
+        #endregion
 
+        #region Part02
+        Cinema cinema = new Cinema("Grand Cinema", 10);
+        cinema.Open();
+
+        // Create tickets
+        StandardTicket t1 = new StandardTicket("Inception", "A-5");
+        t1.SetPrice(150);
+
+        VIPTicket t2 = new VIPTicket("Avengers", true, 50);
+        t2.SetPrice(200);
+
+        IMAXTicket t3 = new IMAXTicket("Dune", true);
+        t3.SetPrice(180);
+
+        // Test SetPrice overload
+        Console.WriteLine("========== SetPrice Test ==========");
+        Console.WriteLine("Setting price directly: 150");
+        t1.SetPrice(150);
+        Console.WriteLine("Setting price with multiplier: 100 x 1.5 = 150");
+
+        cinema.AddTicket(t1);
+        cinema.AddTicket(t2);
+        cinema.AddTicket(t3);
+
+        cinema.PrintAllTickets();
+
+        Cinema.ProcessTicket(t2);
+
+        cinema.Close();
 
 
         #endregion
 
 
 
+
     }
 }
 
-class Animal
-{
-    public  void Sound()
-    {
-        Console.WriteLine("Animal Sound");
-    }
-}
+//class Animal
+//{
+//    public  void Sound()
+//    {
+//        Console.WriteLine("Animal Sound");
+//    }
+//}
 
-class Dog : Animal
-{
-    public new void Sound()
-    {
-        Console.WriteLine("Bark");
-    }
-}
+//class Dog : Animal
+//{
+//    public new void Sound()
+//    {
+//        Console.WriteLine("Bark");
+//    }
+//}
